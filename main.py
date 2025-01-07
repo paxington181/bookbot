@@ -1,4 +1,4 @@
-def main(): # Filter /n line returns
+def main(): #Add dictionary to sorted list
     book_location = "books/frankenstein.txt"
     words = book_text(book_location)
     word_count = word_counter(words)
@@ -6,9 +6,15 @@ def main(): # Filter /n line returns
     lower_case = small_letters(words)
     l_letters = letter_list(lower_case)
     dictionary_populate = dictionary(l_letters)
-    print(dictionary_populate)
+    sorted_dictionary = unsorted_to_sorted(dictionary_populate)
 
-def dictionary(l_letters):
+def sort_on(dictionary_populate): # Required for the sort function to access dictionary entries
+    return dictionary_populate["num"]
+
+def unsorted_to_sorted(dictionary_populate):
+
+
+def dictionary(l_letters): # Populates a dictionary of all letters and special characters
     letter_dictionary = {}
     for letter in l_letters:
         if letter in letter_dictionary:
